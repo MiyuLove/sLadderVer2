@@ -39,7 +39,7 @@ class ActivityLadderStart : AppCompatActivity() {
 
     private var colorT = true
     private val horseColor = "#FFFFFF"
-    private val ladderColor = "#000000"
+    private val ladderColor = "#BAE8FF"
     private val finalColor = "#FFFFFF"
     private val layoutColor = "#FFFFFF"
     private val sfColor = "#FFFFFF"

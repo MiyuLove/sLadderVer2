@@ -9,10 +9,10 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/sladder_logo"
         android:roundIcon="@mipmap/sladder_logo_round"
-        android:label="sladder"
+        android:label="사다리타기"
         android:supportsRtl="true"
         android:theme="@style/Theme.Sladder"
-        tools:targetApi="31">
+        tools:targetApi="32">
 
         <activity
             android:name=".ResultActivity"
