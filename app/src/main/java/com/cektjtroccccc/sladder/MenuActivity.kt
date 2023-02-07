@@ -11,9 +11,9 @@ class MenuActivity : AppCompatActivity() {
     lateinit var binding : ActivityMenuBinding
     var exit_btn = 0
     var back_btn = 0
-    var test_q = 0//i like the memory leak only 4byte
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
-        println("hihi"+test_q)
         super.onCreate(savedInstanceState)
         binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -22,7 +22,7 @@ class MenuActivity : AppCompatActivity() {
             startActivity(Intent(this,ActivityLadderSetting::class.java))
         })
 
-        binding.settingButton.setOnClickListener({
+        binding.ladderSetButton.setOnClickListener({
             startActivity(Intent(this,ActivitySetting::class.java))
         })
 
@@ -36,15 +36,6 @@ class MenuActivity : AppCompatActivity() {
                 exit_btn = 0
             },4000)
         })
-        /*
-        var dk = dataKotlin()
-        test_q = dk.getData()
-        println("cektjtro123 : "+test_q)
-        dk.setData(84848)
-        test_q = dk.getData()
-        println("cektjtro123 : "+test_q)
-        코틀린 파일 사용법
-        */
     }
 
     fun exitLadder(){

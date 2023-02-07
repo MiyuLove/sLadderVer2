@@ -6,23 +6,79 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     tools:context=".ActivityLadderStart"
+
     android:gravity="center"
     >
 
-    <LinearLayout
-        android:id="@+id/listLayout"
+    <TextView
+        android:id="@+id/sLadderBanner"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:fontFamily="@font/ownglyp"
+        android:gravity="center"
+        android:shadowColor="@color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="5"
+        android:text="속도\nSpeed"
+        android:textAlignment="center"
+        android:textColor="#BAE8FF"
+        android:textSize="100dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
 
         <Button
-            android:id="@+id/finishBtn"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:id="@+id/minusButtonInSetting"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/btn_bd"
             android:backgroundTint="@color/white"
-            android:text="F  I  N  I  S  H"
-            android:textColor="@color/black"
-            android:textSize="30dp" />
+            android:text="－"
+            android:textColor="#BAE8FF"
+            android:textSize="70dp"/>
+        <TextView
+            android:id="@+id/speedInSetting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-0-"
+            android:textAlignment="center"
+
+            android:textColor="#BAE8FF"
+            android:textSize="80dp"
+            android:textStyle="bold"
+            android:layout_margin="20dp" />
+
+
+        <Button
+            android:id="@+id/plusButtonInSetting"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/btn_bd"
+            android:backgroundTint="@color/white"
+            android:text="＋"
+            android:textColor="#BAE8FF"
+            android:textSize="70dp" />
 
     </LinearLayout>
+    <Button
+        android:id="@+id/ladderSetBtnInSetting"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:background="@drawable/btn_color"
+        android:text="속도 저장"
+        android:fontFamily="@font/ownglyp"
+        android:textColor="#BAE8FF"
+        android:shadowRadius="1"
+        android:shadowDy="1"
+        android:shadowDx="1"
+        android:shadowColor="#0000FB"
+        android:textSize="70dp"
+
+        android:layout_margin="20dp"/>
 </LinearLayout>

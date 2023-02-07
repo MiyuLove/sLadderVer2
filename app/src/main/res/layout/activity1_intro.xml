@@ -4,17 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity1Intro">
+    android:background="#FEFEFE"
+    android:backgroundTint="#FFFFFF"
+    tools:context=".Activity1Intro"
+    >
 
     <TextView
-        android:id="@+id/IntroText"
-        android:layout_width="wrap_content"
+        android:id="@+id/IntroImage"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="HLadder"
-        android:textSize="30dp"
-        android:textColor="@color/black"
+        android:fontFamily="@font/ownglyp"
+        android:gravity="center"
+        android:shadowColor="@color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="5"
+        android:alpha="0"
+        android:text="SLadder\nGame"
+        android:textAlignment="center"
+        android:textColor="#BAE8FF"
+        android:textSize="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

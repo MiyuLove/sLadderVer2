@@ -22,19 +22,18 @@ class makeColumnRandom constructor(){
     private lateinit var makeArrayRandom : Array<Int>
 
     public var topStart = 10
-    public var topSize = 10
-    public var midStart = 20
+    public var topSize = 10//(10~20)
+    public var midStart = 25//25~65
     public var midSize = 40
-    public var btmStart = 75
+    public var btmStart = 75//75~90
     public var btmSize = 15
 
     init{
         makeArrayRandom = Array(3){0}
-        makeArrayRandom[0] = (1..2).random()
-        makeArrayRandom[1] = (3..5).random()
-        makeArrayRandom[2] = (1..2).random()
+        makeArrayRandom[0] = (1..1).random()
+        makeArrayRandom[1] = (2..3).random()
+        makeArrayRandom[2] = (1..1).random()
 
-        println(makeArrayRandom[1])
         colArrayTop = Array(makeArrayRandom[0]){0}
         colArrayMid = Array(makeArrayRandom[1]){0}
         colArrayBtm = Array(makeArrayRandom[2]){0}
@@ -98,8 +97,13 @@ class makeColumnRandom constructor(){
         var numbers = Array(200){false}
         for(x in a)
             numbers[x] = true
-        for(x in b)
-            if(numbers[x]) return true
+        for(x in b) {
+            if (numbers[x-2]) return true
+            if (numbers[x-1]) return true
+            if (numbers[x]) return true
+            if (numbers[x+1]) return true
+            if (numbers[x+2]) return true
+        }
         return false
     }
 }

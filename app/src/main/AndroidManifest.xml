@@ -3,46 +3,66 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name=".MngApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@mipmap/sladder_logo"
+        android:roundIcon="@mipmap/sladder_logo_round"
+        android:label="sladder"
         android:supportsRtl="true"
         android:theme="@style/Theme.Sladder"
         tools:targetApi="31">
+
+        <activity
+            android:name=".ResultActivity"
+            android:exported="false"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
         <activity
             android:name=".ActivityLadderSetting"
-            android:exported="false">
+            android:exported="false"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".ActivitySetting"
-            android:exported="false">
+            android:exported="false"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".ActivityLadderStart"
-            android:exported="false">
+            android:exported="false"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".MenuActivity"
-            android:exported="false">
+            android:exported="false"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".Activity1Intro"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

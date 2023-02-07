@@ -4,73 +4,92 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:backgroundTint="#FFFFFF"
     tools:context=".MenuActivity">
 
-    <Button
-        android:id="@+id/start_button"
-        android:layout_width="250dp"
+    <TextView
+        android:id="@+id/sLadderBanner"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:backgroundTint="@color/black"
+        android:layout_marginTop="52dp"
+        android:fontFamily="@font/ownglyp"
+        android:gravity="center"
+        android:shadowColor="@color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="5"
+        android:text="SLadder\nGame"
+        android:textAlignment="center"
+        android:textColor="#BAE8FF"
+        android:textSize="100dp"
 
-        android:text="사다리 시작"
-
-        android:textColor="@color/white"
-        android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/setting_button"
+        android:id="@+id/start_button"
         android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/black"
-        android:text="환 경 설 정"
-        android:textColor="@color/white"
-        android:textSize="40dp"
-
+        android:layout_height="100dp"
+        android:background="@drawable/btn_color"
+        android:text="사다리 시작"
+        android:fontFamily="@font/ownglyp"
+        android:textColor="#BAE8FF"
+        android:shadowRadius="1"
+        android:shadowDy="1"
+        android:shadowDx="1"
+        android:shadowColor="#0000FB"
+        android:textSize="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
-
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ladder_set_button"
-        app:layout_constraintVertical_bias="0.19" />
+        app:layout_constraintTop_toBottomOf="@+id/sLadderBanner"
+        app:layout_constraintVertical_bias="0.118" />
 
     <Button
         android:id="@+id/exit_button"
         android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/black"
+        android:layout_height="100dp"
+        android:background="@drawable/btn_color"
         android:text="종 료 하 기"
-        android:textColor="@color/white"
+        android:fontFamily="@font/ownglyp"
+        android:textColor="#BAE8FF"
+        android:shadowRadius="1"
+        android:shadowDy="1"
+        android:shadowDx="1"
+        android:shadowColor="#0000FB"
 
-        android:textSize="40dp"
+        android:textSize="50dp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/setting_button"
-        app:layout_constraintVertical_bias="0.323" />
+        app:layout_constraintTop_toBottomOf="@+id/ladder_set_button"
+        app:layout_constraintVertical_bias="0.438" />
 
     <Button
         android:id="@+id/ladder_set_button"
         android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/black"
+        android:layout_height="100dp"
+        android:background="@drawable/btn_color"
         android:text="사다리 설정"
-        android:textColor="@color/white"
-        android:textSize="40dp"
+        android:fontFamily="@font/ownglyp"
+        android:textColor="#BAE8FF"
+        android:shadowRadius="1"
+        android:shadowDy="1"
+        android:shadowDx="1"
+        android:shadowColor="#0000FB"
+        android:textSize="50dp"
 
         app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/start_button"
-        app:layout_constraintVertical_bias="0.152" />
+        app:layout_constraintVertical_bias="0.175" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

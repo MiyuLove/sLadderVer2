@@ -7,39 +7,179 @@
     tools:context=".ActivityLadderSetting"
     android:id="@+id/adad">
 
+    <TextView
+        android:id="@+id/textViewSetting"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:text="당첨 번호를 선택하세요"
+        android:fontFamily="@font/ownglyp"
+        android:shadowColor="@color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="3"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textColor="#BAE8FF"
+        android:textSize="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutSetting"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSetting">
+
+        <LinearLayout
+            android:id="@+id/editTextCanvas"
+            android:layout_width="200dp"
+            android:layout_height="400dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/atariText1"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:text="1"
+                android:textAlignment="center"
+                android:textColor="#BAE8FF"
+                android:textSize="100dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/atariText3"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:gravity="center"
+                android:text="3"
+                android:textAlignment="center"
+                android:background="#BAE8FF"
+                android:textColor="#FFFFFF"
+                android:textSize="100dp"
+                android:textStyle="bold"  />
+
+            <TextView
+                android:id="@+id/atariText5"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:text="5"
+                android:textAlignment="center"
+                android:textColor="#BAE8FF"
+                android:textSize="100dp"
+                android:textStyle="bold"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/editTextCanvas1"
+            android:layout_width="200dp"
+            android:layout_height="400dp"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/atariText2"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:gravity="center"
+                android:text="2"
+                android:textAlignment="center"
+                android:background="#BAE8FF"
+                android:textColor="#FFFFFF"
+                android:textSize="100dp"
+                android:textStyle="bold"   />
+
+            <TextView
+                android:id="@+id/atariText4"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:text="4"
+                android:textAlignment="center"
+                android:textColor="#BAE8FF"
+                android:textSize="100dp"
+                android:textStyle="bold"  />
+
+            <TextView
+                android:id="@+id/atariText6"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:background="#BAE8FF"
+                android:textColor="#FFFFFF"
+                android:gravity="center"
+                android:text="6"
+                android:textAlignment="center"
+                android:textSize="100dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/horseNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-0-"
+        android:textAlignment="center"
+
+        android:textColor="#BAE8FF"
+        android:textSize="80dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/ladder_set_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutSetting" />
+
+    <Button
+        android:id="@+id/plusButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/btn_bd"
+        android:backgroundTint="@color/white"
+        android:text="＋"
+        android:textColor="#BAE8FF"
+        android:textSize="70dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/ladder_set_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/horseNum"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutSetting" />
+
+    <Button
+        android:id="@+id/minusButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/btn_bd"
+        android:backgroundTint="@color/white"
+        android:text="－"
+        android:textColor="#BAE8FF"
+        android:textSize="70dp"
+        app:layout_constraintBottom_toTopOf="@+id/ladder_set_button"
+        app:layout_constraintEnd_toStartOf="@+id/horseNum"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutSetting"/>
+
     <Button
         android:id="@+id/ladder_set_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="@color/white"
+        android:shadowColor="@color/black"
         android:text="Start"
-        android:textSize="60dp"
-        android:backgroundTint="@color/black"
-        android:shadowColor="@color/black"/>
-
-    <EditText
-        android:id="@+id/ET1"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="236dp"
-        android:textSize="40dp"
+        android:textSize="80dp"
+        android:textColor="#BAE8FF"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btn68"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_marginTop="4dp"
-        android:text="H e l l o"
-        android:textSize="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ET1" />
-
+        android:fontFamily="@font/ownglyp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

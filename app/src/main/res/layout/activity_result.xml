@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultActivity"
+    android:layout_margin="10dp">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/btn_color"
+        android:text="축 하 합 니 다 !"
+        android:textColor="#BAE8FF"
+        android:textSize="60dp"
+        android:shadowRadius="4"
+        android:shadowDy="1"
+        android:shadowDx="2"
+        android:shadowColor="#0000FB"
+        android:fontFamily="@font/ownglyp"
+        android:gravity="center"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/atariNumber"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:background="@drawable/btn_color"
+        android:text="1"
+        android:textAlignment="center"
+        android:gravity="center"
+
+        android:textColor="#BAE8FF"
+        android:textSize="200dp"
+        android:shadowRadius="4"
+        android:shadowDy="1"
+        android:shadowDx="2"
+        android:shadowColor="#00000B"
+        app:layout_constraintBottom_toTopOf="@+id/menuButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/menuButton"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/btn_color"
+        android:text="메뉴"
+        android:textColor="#BAE8FF"
+        android:textSize="80dp"
+        android:shadowRadius="4"
+        android:shadowDy="1"
+        android:shadowDx="2"
+        android:shadowColor="#0000FB"
+        android:fontFamily="@font/ownglyp"
+        android:translationY="-30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/replayBtn"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/btn_color"
+        android:text="다시"
+        android:textColor="#BAE8FF"
+        android:textSize="80dp"
+        android:shadowRadius="4"
+        android:shadowDy="1"
+        android:shadowDx="2"
+        android:shadowColor="#0000FB"
+        android:fontFamily="@font/ownglyp"
+
+
+        android:translationY="-30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
