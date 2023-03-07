@@ -17,7 +17,6 @@ class linearLayout(context: Context, w : Int,  h : Int) : LinearLayout(context) 
         layoutParams = param
         setBackgroundColor(Color.WHITE)
         visibility = VISIBLE
-
     }
 
     public fun setMargin(l : Int, t : Int, r : Int, b : Int){

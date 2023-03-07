@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    tools:context=".ActivityJuJack"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/sLadderBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:fontFamily="@font/ownglyp"
+        android:gravity="center"
+        android:shadowColor="@color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="5"
+        android:text="당첨 라인\n선택"
+        android:textAlignment="center"
+        android:textColor="#BAE8FF"
+        android:textSize="100dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ownglyp"
+        android:textSize="30dp"
+        android:text="사다리 타기 최대 번호보다\n낮아야 적용됩니다!"
+        android:gravity="center" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/minusButtonInSetting"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/btn_bd"
+            android:backgroundTint="@color/white"
+            android:text="－"
+            android:textColor="#BAE8FF"
+            android:textSize="70dp"/>
+
+        <TextView
+            android:id="@+id/speedInSetting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-X-"
+            android:textAlignment="center"
+
+            android:textColor="#BAE8FF"
+            android:textSize="70dp"
+            android:textStyle="bold"
+            android:layout_margin="20dp" />
+
+
+        <Button
+            android:id="@+id/plusButtonInSetting"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/btn_bd"
+            android:backgroundTint="@color/white"
+            android:text="＋"
+            android:textColor="#BAE8FF"
+            android:textSize="70dp" />
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/ladderSetBtnInSetting"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:background="@drawable/btn_color"
+        android:text="라인 저장"
+        android:fontFamily="@font/ownglyp"
+        android:textColor="#BAE8FF"
+        android:shadowRadius="1"
+        android:shadowDy="1"
+        android:shadowDx="1"
+        android:shadowColor="#0000FB"
+        android:textSize="70dp"
+
+        android:layout_margin="20dp"/>
+</LinearLayout>

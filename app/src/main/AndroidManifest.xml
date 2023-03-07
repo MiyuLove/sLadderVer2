@@ -8,12 +8,14 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/sladder_logo"
-        android:roundIcon="@mipmap/sladder_logo_round"
         android:label="사다리타기"
+        android:roundIcon="@mipmap/sladder_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Sladder"
         tools:targetApi="32">
-
+        <activity
+            android:name=".ActivityJuJack"
+            android:exported="false" />
         <activity
             android:name=".ResultActivity"
             android:exported="false"
@@ -22,7 +24,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".ActivityLadderSetting"
             android:exported="false"
@@ -31,7 +32,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".ActivitySetting"
             android:exported="false"
@@ -40,7 +40,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".ActivityLadderStart"
             android:exported="false"
@@ -49,7 +48,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".MenuActivity"
             android:exported="false"
@@ -58,7 +56,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".Activity1Intro"
             android:exported="true"

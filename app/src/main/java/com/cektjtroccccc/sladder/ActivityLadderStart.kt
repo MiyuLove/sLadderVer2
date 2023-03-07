@@ -22,6 +22,7 @@ class ActivityLadderStart : AppCompatActivity() {
     lateinit var binding : ActivityLadderStartBinding
     lateinit var stepLine : ArrayList<ArrayList<Int>>//allocation in makeStepCanvas(Int) in makeLadder(Int)
     lateinit var newStep : ArrayList<ArrayList<Int>>
+    lateinit var newRoute : ArrayList<ArrayList<Pair<Int,Int>>>
     lateinit var btn : Button
     private var w : Int = 0
     private var h : Int = 0
@@ -30,7 +31,7 @@ class ActivityLadderStart : AppCompatActivity() {
     private var timerExit = false
 
     private var boom = 0
-    private var hn = 0
+    private var hn = 0//what this short name
     private var boomer = 0
 
     private var horseTimer = MngApp.inst.horseSpeedInMng
@@ -50,19 +51,19 @@ class ActivityLadderStart : AppCompatActivity() {
         binding = ActivityLadderStartBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setDisplay(0.9f,0.9f)//ratio = 0.9
-
         var num = intent.getIntExtra("key",2)
         hn = num
         boom = intent.getIntExtra("BOOM",0)
         ladderBaseLine = (w*0.06).toInt()
         bLine = (w*0.9)/(num-1)//Object의 w값 만큼 빼줘야 합니다...-ladderBaseLine or - horseWH
+
         val horse = makeHorse(num)
         makeLadder(num)
         colorT = false
         movingHorse(horse)
         val resultHorse = makeHorse(num)
 
-        btn = setButton(0,(h*0.12).toInt())
+        btn = setButton(0,(h*0.1f).toInt())
         binding.wholeLayout.addView(btn)
 
         btn.setOnClickListener({
@@ -88,7 +89,6 @@ class ActivityLadderStart : AppCompatActivity() {
         val rtnBtn = Button(applicationContext)
         val param = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, bH)
         rtnBtn.setBackgroundColor(Color.parseColor(btnColor))
-        rtnBtn.translationY += h*0.03f
         rtnBtn.text = "결 과 보 기"
         rtnBtn.setTextColor(Color.WHITE)
         rtnBtn.setTextSize(40f)
@@ -103,7 +103,7 @@ class ActivityLadderStart : AppCompatActivity() {
         horseBase.setHorizontalGravity(1)
         horseBase.translationZ += 12
         horseBase.outlineProvider = null
-        horseBase.setMargin((w*0.06).toInt(),(w*0.06).toInt(),(w*0.06).toInt(),0)
+        horseBase.setMargin((w*0.06).toInt(),0,(w*0.06).toInt(),0)
         var hC = ""
         if(colorT){
             hC = horseColor
@@ -113,14 +113,14 @@ class ActivityLadderStart : AppCompatActivity() {
         }
 
         val horse = arrayListOf<movingText>()
-        val horseWH = (w*0.15).toInt()
+        val horseWH = ladderBaseLine*2
         for(i in 0 until num) {
             var qt = (i+1).toString()
             if(i == boom && !colorT) {qt = "당"}
             horse.add(movingText(applicationContext,horseWH,horseWH,qt))
 
             horse[i].setMargin(bLine.toInt()-horseWH,0,0,0)
-            horse[i].movingTextSize(w*0.035f)
+            horse[i].movingTextSize(horseWH/5f)
             horse[i].background = ContextCompat.getDrawable(this,R.drawable.btn_bd)
             horseBase.addView(horse[i])
         }
@@ -131,7 +131,7 @@ class ActivityLadderStart : AppCompatActivity() {
         return horse
     }
 
-    private fun makeResult(AAPII:ArrayList<ArrayList<Pair<Int,Int>>>): ArrayList<Int>{
+    private fun makeResult(AAPII:ArrayList<ArrayList<Pair<Int,Int>>>): Int{
         val rtnAL = ArrayList<Int>()
 
         for(x in AAPII){
@@ -147,12 +147,11 @@ class ActivityLadderStart : AppCompatActivity() {
             }
             cnt ++
         }
-        return rtnAL
+
+        return cnt
     }
 
     private fun movingHorse(horse : ArrayList<movingText>){
-        var newRoute = searchRoute(newStep)
-        makeResult(newRoute)
         var cnt = 0
         println(dd() + "this is new Route")
         for(x in newRoute){
@@ -169,9 +168,11 @@ class ActivityLadderStart : AppCompatActivity() {
             println()
         }
 
-        //val qt = Array(horse.size){true}
         var setter = Array(horse.size+3){false}
         var qupid = bLine.toInt()
+
+        var moveW = 1
+        var moveH = 1
         timer(period = horseTimer){
             cnt = 0
             var idx = 0
@@ -188,30 +189,26 @@ class ActivityLadderStart : AppCompatActivity() {
                     continue
                 }
                 if(setter[idx]) {
-                    x.movement(2, (h * 0.001f).toInt())
+                    x.movement(2, moveH)
                     idx++
                     continue
                 }
-                if(idx >= newRoute.size) idx = newRoute.size-1//setter랑 cnt 수치 렉걸려서 작용 안되는 ... 있을 수 있는 최악의 상황
+                if(idx >= newRoute.size) idx = newRoute.size-1
+                //setter랑 cnt 수치 렉걸려서 작용 안되는 ... 있을 수 있는 최악의 상황 대비
                 if(idx < 0) idx =0
 
                 if(x.y.toInt() >= abs(newRoute[idx][x.line].second) ){
                     val d = if (newRoute[idx][x.line].second > 0) 1 else 3
-                    x.movement(d,(h*0.001f).toInt())
+                    x.movement(d,(moveW))
                     x.hX ++
-
                     if(x.hX >= qupid) {
                         x.hX = 0
-                        x.movement(2, (h * 0.001f).toInt())
+                        x.movement(2, moveH)
                         x.line ++
                         if(newRoute[idx].size <= x.line)setter[idx] = true
                     }
                 }
-                else x.movement(2,(h*0.001f).toInt())
-
-//                if(x.y.toInt() >= abs(newRoute[idx][x.line].second))
-  //                  qt[idx] = true
-
+                else x.movement(2,moveH)
                 idx ++
             }
             if(stopper)cancel()
@@ -299,7 +296,7 @@ class ActivityLadderStart : AppCompatActivity() {
         if(num == 1)bLine = 1.0
 
         for(i in 0 until num) {
-            line.add(movingView(applicationContext, ladderBaseLine, (h * 0.85).toInt()))
+            line.add(movingView(applicationContext, ladderBaseLine, (h * 0.80).toInt()))
             line[i].setBackgroundColor(Color.parseColor(ladderColor))
         }
 
@@ -308,12 +305,20 @@ class ActivityLadderStart : AppCompatActivity() {
 
     private fun makeStepCanvas(n : Int):ArrayList<linearLayout>{
         val LR = arrayListOf<linearLayout>()
-
-        stepLine = makeStepMargin(n)//2DArrayList
-        newStep = makeHorseArea()
-
+        var bn = MngApp.inst.boomerNumber
+        println(dd() + "boomerNumber : "+ bn)
+        println(dd() + "AtariNumber : " + boom)
+        var jujujak = true
+        while(jujujak) {
+            stepLine = makeStepMargin(n)//2DArrayList
+            newStep = makeHorseArea()
+            newRoute = searchRoute(newStep)
+            var qt = makeResult(newRoute)
+            if(qt == bn) jujujak = false
+            if(hn < bn || bn == 0) jujujak = false
+        }
         for(i in 0 until n){
-            LR.add(linearLayout(applicationContext,bLine.toInt()-ladderBaseLine,(h*0.85).toInt()))
+            LR.add(linearLayout(applicationContext,bLine.toInt()-ladderBaseLine,(h*0.80).toInt()))
             LR[i].setBackgroundColor(Color.parseColor(layoutColor))
             LR[i].clipChildren = false
             LR[i].setOrientationVertical()

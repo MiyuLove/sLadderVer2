@@ -26,6 +26,10 @@ class MenuActivity : AppCompatActivity() {
             startActivity(Intent(this,ActivitySetting::class.java))
         })
 
+        binding.startButton12.setOnClickListener({
+            startActivity(Intent(this,ActivityJuJack::class.java))
+        })
+
         binding.exitButton.setOnClickListener({
             Toast.makeText(this,"종료 버튼을 한번 더\n눌러주세요", Toast.LENGTH_SHORT).show()
             exit_btn ++

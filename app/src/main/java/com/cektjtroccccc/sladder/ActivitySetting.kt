@@ -19,13 +19,13 @@ class ActivitySetting : AppCompatActivity() {
     lateinit var t : Toast
 
     var horseSpeed : Long = 0
-    var horseNumDefault = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySettingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        horseSpeed = MngApp.inst.horseSpeedInMng
+        horseSpeed = MngApp.inst.horseSetSppedInMng
 
         binding.speedInSetting.text = "-" + horseSpeed.toString() + "-"
 
@@ -39,7 +39,7 @@ class ActivitySetting : AppCompatActivity() {
         })
 
         binding.ladderSetBtnInSetting.setOnClickListener({
-            MngApp.inst.horseSpeedInMng = 6 - horseSpeed
+            MngApp.inst.setHorseSpeed(horseSpeed-1)
             println("cektjtro123 : Setting HorseSpeed = " + horseSpeed)
             t.cancel()
             t.show()
@@ -47,7 +47,7 @@ class ActivitySetting : AppCompatActivity() {
     }
 
     private fun horseSpeedSet(a : Int){
-        if(horseSpeed + a < 0 || horseSpeed + a > 5)
+        if(horseSpeed + a < 1 || horseSpeed + a > 6)
             return
 
         horseSpeed+=a
